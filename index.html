@@ -27,7 +27,6 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           center: {lat: 24.989249, lng: 121.313548}
-          setMarkers(map,locations)
         });
 
                 
@@ -36,40 +35,28 @@
         var locations = [['1', 24.976277, 121.323056, '天濟堂藥局'],
                         ['2', 24.985161, 121.317969, '桃鶯路大樹藥局']];
           
-        function setMarkers(map,locations){
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'AB';
 
-        var marker, i
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
 
-        for (i = 0; i < locations.length; i++)
-            {  
-
-            var medindex = locations[i][0]
-            var lat = locations[i][1]
-            var long = locations[i][2]
-            var medname =  locations[i][3]
-
-            latlngset = new google.maps.LatLng(lat, long);
-                
-        var marker = new google.maps.Marker({  
-          map: map, title: medindex , position: latlngset  
-            });
-            map.setCenter(marker.getPosition())
-
-
-        var content = "編號: " + medindex +  '</h3>' + "藥局名稱: " + medname     
-
-        var infowindow = new google.maps.InfoWindow()
-
-        google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
-        return function() {
-           infowindow.setContent(content);
-           infowindow.open(map,marker);
-            };
-        })(marker,content,infowindow)); 
-
-        }
-    }
-
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat: 24.976277, lng: 121.323056}, <!-- 天濟堂藥局--->
+        {lat: 24.985161, lng: 121.317969}  <!-- 桃鶯路大樹藥局--->
+      ]
     </script>
     <!-- Replace following script src -->
    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
