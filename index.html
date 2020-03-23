@@ -51,13 +51,14 @@
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});     
-          
+          for (t_m = 0; t_m < markers.length; t_m++){
           var infowindow = new google.maps.InfoWindow({
             content: contentString,
-            position: locations[0],
+            position: locations[t_m],
             maxWidth:200,
             });
-            infowindow.open(map,markers[0]);  
+            infowindow.open(map,markers[t_m]);  
+          }
       }
 
 
