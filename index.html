@@ -27,6 +27,7 @@
         {lat: 24.985161, lng: 121.317969}  <!-- 桃鶯路大樹藥局--->
       ]
       var contentString = '<h1>大家好我是資訊視窗</h1>';
+      var infowindow = new google.maps.InfoWindow();
       function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -51,13 +52,11 @@
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});     
-          for (t_m = 0; t_m < markers.length; t_m++){
-          var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            position: locations[t_m],
-            maxWidth:200,
-            });
-            infowindow.open(map,markers[t_m]);  
+          for (int_m t_m = 0; t_m < markers.length; t_m++){
+            google.maps.event.addListener(markers[t_m], 'click', function () {
+            infowindow.setContent(contentString);
+            infowindow.open(map, markers[t_m]);
+                });
           }
       }
 
