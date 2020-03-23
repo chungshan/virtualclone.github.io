@@ -51,6 +51,18 @@
         {lat: 24.976277, lng: 121.323056}, <!-- 天濟堂藥局--->
         {lat: 24.985161, lng: 121.317969}  <!-- 桃鶯路大樹藥局--->
       ]
+      
+      for(t = 0; t < locations.length; i++){
+          var content = "Number: " + t
+          var infowindow = new google.maps.InfoWindow()
+          google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+          return function() {
+           infowindow.setContent(content);
+           infowindow.open(map,marker);
+        };
+    })(marker,content,infowindow)); 
+
+      }
     </script>
     <!-- Replace following script src -->
    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
