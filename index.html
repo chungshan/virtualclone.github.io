@@ -52,12 +52,7 @@
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});     
-          for (int_m t_m = 0; t_m < markers.length; t_m++){
-            google.maps.event.addListener(markers[t_m], 'click', function () {
-            infowindow.setContent(contentString);
-            infowindow.open(map, markers[t_m]);
-                });
-          }
+
       }
 
 
