@@ -47,13 +47,10 @@
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       
-      var locations = [
-        {lat: 24.976277, lng: 121.323056}, <!-- 天濟堂藥局--->
-        {lat: 24.985161, lng: 121.317969}  <!-- 桃鶯路大樹藥局--->
-      ]
+
       
-      for(t = 0; t < locations.length; t++){
-          var content = "Number: " + t
+      for(med_num = 0; med_num < locations.length; med_num++){
+          var content = "Inedx: " + labels[med_num]
           var infowindow = new google.maps.InfoWindow()
           google.maps.event.addListener(markers,'click', (function(markers,content,infowindow){ 
           return function() {
@@ -64,6 +61,10 @@
       }
           
       }
+      var locations = [
+        {lat: 24.976277, lng: 121.323056}, <!-- 天濟堂藥局--->
+        {lat: 24.985161, lng: 121.317969}  <!-- 桃鶯路大樹藥局--->
+      ]
     </script>
     <!-- Replace following script src -->
    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
