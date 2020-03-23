@@ -37,7 +37,6 @@
       var infowindow = new google.maps.InfoWindow();
 
         // Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFG';
 
         // Add some markers to the map.
         // Note: The code uses the JavaScript Array.prototype.map() method to
@@ -46,11 +45,10 @@
         var markers = locations.map(function(location, i) {
           var marker = new google.maps.Marker({
             position: location,
-            label: labels[i % labels.length]
           });
           google.maps.event.addListener(marker, 'click', function(evt) {
-          infoWin.setContent(location.info);
-          infoWin.open(map, marker);
+          infowindow.setContent(location.info);
+          infowindow.open(map, marker);
             })
           return marker;
         });
