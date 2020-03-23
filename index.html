@@ -55,12 +55,12 @@
       for(t = 0; t < locations.length; i++){
           var content = "Number: " + t
           var infowindow = new google.maps.InfoWindow()
-          google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+          google.maps.event.addListener(markers,'click', (function(markers,content,infowindow){ 
           return function() {
            infowindow.setContent(content);
-           infowindow.open(map,marker);
+           infowindow.open(map,markers);
         };
-    })(marker,content,infowindow)); 
+    })(markers,content,infowindow)); 
 
       }
     </script>
