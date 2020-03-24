@@ -46,12 +46,12 @@
         var markers = locations.map(function(location, i) {
           var marker = new google.maps.Marker({
             position: location,
-              
-              if(locations[i].time_label == "R"){
+            
+              if(location.time_label == "R"){
                   icon: 'http:// labs.google.com/ridefinder/images/mm_20_red.png'
-              }else(locations[i].time_label == "N"){
+              }else(location.time_label == "N"){
                   icon: 'http:// labs.google.com/ridefinder/images/mm_20_black.png'
-               }else(locations[i].time_label == "A"){
+               }else(location.time_label == "A"){
                   icon: 'http:// labs.google.com/ridefinder/images/mm_20_orange.png'
                }else{
                    icon: 'http:// labs.google.com/ridefinder/images/mm_20_white.png'
