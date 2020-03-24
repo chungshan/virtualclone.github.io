@@ -28,6 +28,8 @@
         {lat: 24.985028, lng: 121.318283, info: "美康健保藥局 桃康店", time_label: "A"}
       ]
       
+
+      
       function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -46,8 +48,12 @@
         var markers = locations.map(function(location, i) {
           var marker = new google.maps.Marker({
             position: location,
-            
-            icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png' 
+            var icon = {};
+            if(location.time_label === "R"){
+            icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png' }
+            else{
+            icon: 'http://labs.google.com/ridefinder/images/mm_20_yellow.png' 
+            }
           });
           google.maps.event.addListener(marker, 'click', function(evt) {
           infowindow.setContent(location.info);
