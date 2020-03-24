@@ -50,14 +50,21 @@
           if(location.time_label === "R"){
               custom_icon = {
                   url: 'http://labs.google.com/ridefinder/images/mm_20_red.png',
-                  scaledSize: new google.maps.Size(36,60)
+                  scaledSize: new google.maps.Size(18,30)
                             }
           }else if(location.time_label === "N"){
-              custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_black.png'
+              custom_icon ={
+                  url: 'http://labs.google.com/ridefinder/images/mm_20_black.png',
+                  scaledSize: new google.maps.Size(18,30)
           }else if(location.time_label === "A"){
-              custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_yellow.png'
+              custom_icon = ={
+                  url: 'http://labs.google.com/ridefinder/images/mm_20_yellow.png',
+                  scaledSize: new google.maps.Size(18,30)
+              }
           }else{
-              custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_green.png'
+               custom_icon = ={
+                  url: 'http://labs.google.com/ridefinder/images/mm_20_green.png',
+                  scaledSize: new google.maps.Size(18,30)
           }
           var marker = new google.maps.Marker({
             position: location,
