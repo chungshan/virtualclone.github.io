@@ -46,21 +46,7 @@
         var markers = locations.map(function(location, i) {
           var marker = new google.maps.Marker({
             position: location,
-              if(locations.time_label == "R"){
-                  icon: {
-                    url: "http:// labs.google.com/ridefinder/images/mm_20_red.png"
-                    }}else if(locations.time_label == "N"){
-                     icon: {
-                    url: "http:// labs.google.com/ridefinder/images/mm_20_blue.png"   
-                            }
-                    }else if(locations.time_label == "A"){
-                     icon: {
-                    url: "http:// labs.google.com/ridefinder/images/mm_20_yellow.png"   
-                    }}else{
-                       icon: {
-                    url: "http:// labs.google.com/ridefinder/images/mm_20_purple.png"   
-                    } 
-                    }
+            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png'
               }
           });
           google.maps.event.addListener(marker, 'click', function(evt) {
