@@ -48,15 +48,12 @@
         var markers = locations.map(function(location, i) {
           var marker = new google.maps.Marker({
             position: location,
-            var icon = {};
-            if(location.time_label === "R"){
-            icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png' }
-            else{
-            icon: 'http://labs.google.com/ridefinder/images/mm_20_yellow.png' 
-            }
+
+            icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
+         
           });
           google.maps.event.addListener(marker, 'click', function(evt) {
-          infowindow.setContent(location.info);
+          infowindow.setContent(location.time_label);
           infowindow.open(map, marker);
             })
           return marker;
