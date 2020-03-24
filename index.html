@@ -47,17 +47,7 @@
           var marker = new google.maps.Marker({
             position: location,
             
-              if(location.time_label == "R"){
-                  icon: 'http:// labs.google.com/ridefinder/images/mm_20_red.png'
-              }else(location.time_label == "N"){
-                  icon: 'http:// labs.google.com/ridefinder/images/mm_20_black.png'
-               }else(location.time_label == "A"){
-                  icon: 'http:// labs.google.com/ridefinder/images/mm_20_orange.png'
-               }else{
-                   icon: 'http:// labs.google.com/ridefinder/images/mm_20_white.png'
-               }
-              
-              
+            icon: 'http:// labs.google.com/ridefinder/images/mm_20_white.png' 
           });
           google.maps.event.addListener(marker, 'click', function(evt) {
           infowindow.setContent(location.info);
