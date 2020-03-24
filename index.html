@@ -48,11 +48,16 @@
         var markers = locations.map(function(location, i) {
             var custom_icon = {};
           if(location.time_label === "R"){
-              custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
+              custom_icon = {
+                  url: 'http://labs.google.com/ridefinder/images/mm_20_red.png'
+                  size: new google.maps.Size(100,100)
+                            }
           }else if(location.time_label === "N"){
+              custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_black.png'
+          }else if(location.time_label === "A"){
               custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_yellow.png'
           }else{
-              custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_black.png'
+              custom_icon = 'http://labs.google.com/ridefinder/images/mm_20_green.png'
           }
           var marker = new google.maps.Marker({
             position: location,
