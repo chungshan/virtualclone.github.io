@@ -57,7 +57,8 @@
 
         <!-- Check box -->
 
-            
+        <input type="checkbox" value="Show Group 1" onclick="displayMarkers('R');">
+
         
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
@@ -105,8 +106,9 @@
           infowindow.open(map, marker);
             })
             
-        if(location.time_label === "R"){
-            marker.setVisible(false);
+        function displayMarkers(category){
+            if (location.time_label === category)
+                marker.setVisble(false);
         }
           return marker;
         });
