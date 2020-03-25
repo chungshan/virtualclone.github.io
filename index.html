@@ -95,7 +95,7 @@
             icon: custom_icon
          
           });
-          var content_string = '<p>'+ location.info +'</p>' + '<p>販賣時間： ' + location.sell_time + '點</p>;
+          var content_string = '<p>'+ location.info +'</p>' + '<p>販賣時間： ' + location.sell_time + '點</p>';
           google.maps.event.addListener(marker, 'click', function(evt) {
           infowindow.setContent(content_string);
           infowindow.open(map, marker);
