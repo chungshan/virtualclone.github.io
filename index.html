@@ -95,7 +95,7 @@
             icon: custom_icon
          
           });
-          var content_string = '<p>'+ location.info +'</p>' + '<p>販賣時間： ' + location.sell_time + '</p>' + <a href="tel:03-3614983">Call me at 03-3614983</a>;
+          var content_string = '<p>'+ location.info +'</p>' + '<p>販賣時間： ' + location.sell_time + '</p>' + '<a href="tel:03-3614983">Call me at 03-3614983</a>';
           google.maps.event.addListener(marker, 'click', function(evt) {
           infowindow.setContent(content_string);
           infowindow.open(map, marker);
