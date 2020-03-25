@@ -55,6 +55,11 @@
         <!-- direction service -->
 
 
+        <!-- Check box -->
+        <input type="checkbox" value="Show Group 1" onclick="displayMarkers(this,1);">
+        <input type="checkbox" value="Show Group 2" onclick="displayMarkers(this, 2);">
+            
+        
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           center: {lat: 24.989249, lng: 121.313548}
@@ -100,16 +105,21 @@
           infowindow.setContent(content_string);
           infowindow.open(map, marker);
             })
+            
+        if(location.info === "R"){
+            marker.setVisible(false);
+        }
           return marker;
         });
 
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});     
-
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});             
       }
 
 
+    <!-- Display different types of markers -->
+   
     </script>
     <!-- Replace following script src -->
    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
