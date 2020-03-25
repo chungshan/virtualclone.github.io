@@ -40,9 +40,9 @@
     <script>
 
       var locations = [
-        {lat: 24.976277, lng: 121.323056, info: "天濟堂藥局", time_label: "R"}, <!-- 天濟堂藥局--->
-        {lat: 24.985161, lng: 121.317969, info: "桃鶯路大樹藥局", time_label: "N"},  <!-- 桃鶯路大樹藥局--->
-        {lat: 24.985028, lng: 121.318283, info: "美康健保藥局 桃康店", time_label: "A"}
+        {lat: 24.976277, lng: 121.323056, info: "天濟堂藥局", time_label: "R", sell_time: "11:00、20:00"}, <!-- 天濟堂藥局--->
+        {lat: 24.985161, lng: 121.317969, info: "桃鶯路大樹藥局", time_label: "N", sell_time: "19:30"},  <!-- 桃鶯路大樹藥局--->
+        {lat: 24.985028, lng: 121.318283, info: "美康健保藥局 桃康店", time_label: "A", sell_time: "14:00"}
       ]
       
 
@@ -95,8 +95,9 @@
             icon: custom_icon
          
           });
+          var content_string = '<p>'+ location.info +'</p>' + '<p>販賣時間： ' + location.sell_time + '點</p>;
           google.maps.event.addListener(marker, 'click', function(evt) {
-          infowindow.setContent(location.info);
+          infowindow.setContent(content_string);
           infowindow.open(map, marker);
             })
           return marker;
