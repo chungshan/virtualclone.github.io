@@ -56,8 +56,7 @@
 
 
         <!-- Check box -->
-        <input type="checkbox" value="Show Group 1" onclick="displayMarkers(this,1);">
-        <input type="checkbox" value="Show Group 2" onclick="displayMarkers(this, 2);">
+
             
         
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -106,7 +105,9 @@
           infowindow.open(map, marker);
             })
             
- 
+        if(location.info === "R"){
+            marker.setVisible(false);
+        }
           return marker;
         });
 
