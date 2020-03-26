@@ -115,14 +115,17 @@
           infowindow.setContent(content_string + location.time_label);
           infowindow.open(map, marker);
             })
-           function displayMarkers(category){
-                if(marker.category === "R"){
-                    marker.setVisible(false);
-                }
-        }
           return marker;
         });
-
+          
+        function displayMarkers(category){
+        var dis_i;
+                for(dis_i = 0; i < markers.length; dis_i++){
+                    if(markers[dis_i].time_label === 'R'){
+                        markers[dis_i].setVisble(false);
+                    }
+                }
+        }
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});             
