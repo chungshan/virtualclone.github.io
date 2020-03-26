@@ -115,6 +115,11 @@
           infowindow.setContent(content_string);
           infowindow.open(map, marker);
             })
+           function displayMarkers(category){
+                if(marker.category === "R"){
+                    marker.setVisible(false);
+                }
+        }
           return marker;
         });
 
@@ -123,14 +128,7 @@
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});             
       }
 
-        function displayMarkers(category){
-            var cat_i;
-            for(cat_i = 0; i < markers.length; cat_i++){
-                if(markers[cat_i].category === "R"){
-                    markers[cat_i].setVisible(false);
-                }
-            }
-        }
+       
     <!-- Display different types of markers -->
    
     </script>
