@@ -112,7 +112,7 @@
           });
           var content_string = '<p>'+ location.info +'</p>' + '<p>販賣時間： ' + location.sell_time + '</p>' + '<p>電話： ' + '<a href="tel:' + location.phone + '">' + location.phone + '</a>' + '</p>';
           google.maps.event.addListener(marker, 'click', function(evt) {
-          infowindow.setContent(content_string);
+          infowindow.setContent(content_string + location.category);
           infowindow.open(map, marker);
             })
            function displayMarkers(category){
