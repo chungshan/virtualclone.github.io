@@ -119,9 +119,12 @@
         });
           
      
+          var dis_i;
+          for(dis_i = 0; dis_i < markers.length; dis_i++){
             if(markers[dis_i].category === "S"){
+                markers.setVisble(false);
                 }
-                
+          }
         
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
