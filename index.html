@@ -126,9 +126,8 @@
                 }else{
                 markers[dis_i].setVisble(true);    
                 }
-                    
+        markers[dis_i].setMap(map);
           }
-        markers.setMap(map);
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});             
