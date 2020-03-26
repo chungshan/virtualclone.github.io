@@ -56,7 +56,7 @@
         {lat: 24.985028, lng: 121.318283, info: "美康健保藥局 桃康店", time_label: "A", sell_time: "14:00", phone: "03-3641815"}
       ]
       
-
+      var markers_i;
       
       function initMap() {
           
@@ -118,7 +118,7 @@
           return marker;
         });
           
-     
+        markers_i.push(markers);
 
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
@@ -127,12 +127,12 @@
 
         var dis_i;
           for(dis_i = 0; dis_i < markers.length; dis_i++){
-            if(markers[dis_i].category === "R"){
-                markers[dis_i].setVisble(false);
+            if(markers_i[dis_i].category === "R"){
+                markers_i[dis_i].setVisble(false);
                 }else{
-                markers[dis_i].setVisble(true);    
+                markers_i[dis_i].setVisble(true);    
                 }
-        markers[dis_i].setMap(map);
+        markers_i[dis_i].setMap(map);
           }
    
     </script>
